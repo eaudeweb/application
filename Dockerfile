@@ -12,7 +12,7 @@ ENV WORK_DIR=/opt/lamunca-management
 RUN mkdir -p $WORK_DIR
 
 WORKDIR  $WORK_DIR
-ADD  files/  $WORK_DIR
+ADD  application/  $WORK_DIR
 
 RUN npm install mysql && npm install
 
