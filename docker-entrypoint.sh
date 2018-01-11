@@ -110,10 +110,9 @@ fi
 cat > /opt/lamunca-management/config/localisation.json << EOF
 {
   "countries" : {
-    "RO": {
-      "name": "Romania",
-      "bank_holidays": [
-
+    "RO" : {
+      "name" : "Romania",
+      "bank_holidays" : [
         {
           "name" : "New Year Day",
           "date" : "2018-01-01"
@@ -160,17 +159,14 @@ cat > /opt/lamunca-management/config/localisation.json << EOF
         }
       ]
     },
-    "DE" : {
-      "name" : "Germany"
-    },
+
     "IS" : {
       "name" : "Iceland"
     }
 
-      ]
     }
   }
-}
+
 EOF
 
 npm run-script db-update
