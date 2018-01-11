@@ -3,7 +3,7 @@
 
 Web application for managing employee absences.
 
-[![Docker]( https://img.shields.io/travis/rust-lang/rust.svg?organization=eaudeweb&repository=lalucru.eaudeweb)](https://hub.docker.com/r/eaudeweb/lamunca/builds)
+[![Docker]( https://img.shields.io/travis/rust-lang/rust.svg?organization=eaudeweb&repository=lamunca-management.eaudeweb)](https://hub.docker.com/r/eaudeweb/lamunca-management/builds)
 
 
 ## Using the docker image
