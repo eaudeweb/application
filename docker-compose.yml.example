@@ -14,7 +14,7 @@ services:
       - MYSQL_PASSWORD=userdb
 
   app:
-    image: eaudeweb/lamunca:latest
+    image: eaudeweb/lamunca-management
     container_name: lamunca_app
     depends_on:
       - db
