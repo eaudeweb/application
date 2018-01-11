@@ -1,0 +1,44 @@
+version: '2'
+
+services:
+  db:
+    image: mariadb:10.2.12
+    container_name: lamunca_db
+    restart: unless-stopped
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=m3taLliC4
+      - MYSQL_DATABASE=lamunca_db
+      - MYSQL_USER=minion
+      - MYSQL_PASSWORD=m1s3creT
+
+  app:
+    image: eaudeweb/lamunca:latest
+    container_name: lamunca_app
+    depends_on:
+      - db
+    restart: unless-stopped
+    volumes:
+      - jsonconfig:/opt/lamunca-management/config
+    ports:
+      - "3000:3000"
+    environment:
+      - ALLOW_ACCOUNTS_CREATION=true  # set this to false to disable public account creation (set it once you have created your company to disable public regitration)
+      - APP_URL=
+      - PROMOTION_URL= # uncomment and set this if you want to use you URL for footer promotion url
+      - NODE_ENV=production
+      - SENDER_MAIL=contact@eaudeweb.ro # only set this if you want mail support
+      - SMTP_HOST=localhost
+      - SMTP_PORT=25
+      - MYSQL_HOST=db
+      - MYSQL_USER=minion
+      - MYSQL_DATABASE=lamunca_db
+      - MYSQL_PASSWORD=m1s3creT
+
+volumes:
+  data:
+    driver: local
+  jsonconfig:
+    driver: local
+
