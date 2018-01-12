@@ -39,11 +39,11 @@ else
 fi
 
 if [[ -z $APP_URL ]]; then
-	APP_URL=http://app.timeoff.management
+	APP_URL=https://lamunca.eaudeweb.ro
 fi
 
 if [[ -z $PROMOTION_URL ]]; then
-	PROMOTION_URL=http://timeoff.management
+	PROMOTION_URL=https://lamunca.eaudeweb.ro
 fi
 
 if [[ -z $ALLOW_ACCOUNTS_CREATION ]]; then
