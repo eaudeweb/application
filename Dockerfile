@@ -14,12 +14,15 @@ RUN git checkout v0.6.2
 RUN npm install mysql && npm install
 
 
-ADD application/views/partials/footer.hbs  /opt/timeoff-management/views/partials/footer.hbs
-ADD application/views/partials/header.hbs  /opt/timeoff-management/views/partials/header.hbs
-ADD application/views/index.hbs  /opt/timeoff-management/views/index.hbs
+ADD ./application/views/partials/footer.hbs  /opt/timeoff-management/views/partials/footer.hbs
+ADD ./application/views/partials/header.hbs  /opt/timeoff-management/views/partials/header.hbs
+ADD ./application/views/index.hbs  /opt/timeoff-management/views/index.hbs
 
 
 EXPOSE 3000
 VOLUME /opt/timeoff-management/config
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT [ "bash", "/docker-entrypoint.sh"]
+
+EXPOSE 3000
+CMD npm start
