@@ -8,7 +8,7 @@ RUN  apt-get update -y  \
 WORKDIR /opt
 RUN git clone https://github.com/timeoff-management/application.git timeoff-management
 
-ENV WORKDIR=/opt/timeoff-management
+ENV WORK_DIR=/opt/timeoff-management
 WORKDIR $WORK_DIR
 RUN git checkout v0.6.2
 RUN npm install mysql && npm install
