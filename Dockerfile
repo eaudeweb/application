@@ -3,9 +3,9 @@ FROM node
 WORKDIR /opt
 
 RUN git clone https://github.com/anecula/timeoff-management-application.git timeoff-management 
-RUN apt-get update -y && apt-get upgrade -y \
-    && apt install vim \
-    && apt install vim
+
+RUN  apt-get update -y  \
+     && apt-get install -y vim
 
 WORKDIR /opt/timeoff-management
 RUN npm install mysql && npm install
