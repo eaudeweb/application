@@ -1,7 +1,7 @@
 FROM node
 
 RUN  apt-get update -y  \
-     && apt-get install -y vim
+     && apt-get install -y vim \
      && apt-get install -y git
 
 WORKDIR /opt
