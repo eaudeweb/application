@@ -508,4 +508,5 @@ cat > /opt/timeoff-management/config/localisation.json << EOF
 EOF
 
 npm run-script db-update
+npm start
 
