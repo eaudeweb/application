@@ -3,14 +3,18 @@ FROM ubuntu:latest
 RUN apt-get update -y && apt-get upgrade -y
 RUN apt-get install -y git npm nodejs nodejs-legacy
 
-RUN adduser --system app --home /app
-USER app
 
-WORKDIR /app
-RUN git clone https://github.com/anecula/application.git  lamunca-management
 
-WORKDIR /app/lamunca-management
+WORKDIR /opt
+RUN   git clone https://github.com/timeoff-management/application.git timeoff-management
+COPY  application/views/partials/footer.hbs  /opt/timeoff-management/views/partials/footer.hbs
+COPY  application/views/partials/header.hbs  /opt/timeoff-management/views/partials/header.hbs
+COPY  application/views/index.hbs  /opt/timeoff-management/views/index.hbs
+
+WORKDIR /opt/timeoff-management
 RUN npm install
+
+
 
 EXPOSE 3000
 CMD npm start
