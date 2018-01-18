@@ -317,7 +317,7 @@ module.exports = function(passport) {
       });
   });
 
-  router.post('/import-company/', function(req, res){
+/*   router.post('/import-company/', function(req, res){
 
     var form = new formidable.IncomingForm(),
         parseAsync = Promise.promisify(form.parse);
@@ -358,7 +358,7 @@ module.exports = function(passport) {
     res.render('import_company', {
       url_to_the_site_root : get_url_to_site_root_for_anonymous_session(req),
     });
-  });
+  }); */
 
   return router;
 };
